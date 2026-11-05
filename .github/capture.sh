@@ -10,12 +10,6 @@ adb shell settings put secure show_ime_with_hard_keyboard 0
 adb install -r "$APK"
 adb shell cmd uimode night no
 
-hide_ime() {
-  if adb shell dumpsys input_method | grep -q "mInputShown=true"; then
-    adb shell input keyevent 4
-    sleep 1
-  fi
-}
 
 type_digits() {
   local digits=$1
@@ -48,7 +42,6 @@ PY
 adb shell am start -W -n "$PKG/.MainActivity"
 sleep 4
 type_digits 21
-hide_ime
 sleep 1
 adb exec-out screencap -p > "$OUT/screenshot.png"
 adb shell uiautomator dump /sdcard/ui.xml && adb pull /sdcard/ui.xml "$OUT/ui-partial.xml"
@@ -68,13 +61,11 @@ sleep 1
 adb shell am start -W -n "$PKG/.MainActivity"
 sleep 3
 type_digits 654321
-hide_ime
 sleep 1
 tap_text Submit
 sleep 2
 adb exec-out screencap -p > "$OUT/after-wrong.png"
 type_digits 123456
-hide_ime
 sleep 1
 tap_text Submit
 sleep 2
