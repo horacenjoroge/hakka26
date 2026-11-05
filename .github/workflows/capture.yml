@@ -16,6 +16,12 @@ jobs:
         working-directory: submissions/horace/app
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: horace-final
+
+      - uses: actions/checkout@v5
+        with:
+          path: tools
 
       - uses: actions/setup-java@v5
         with:
@@ -48,7 +54,7 @@ jobs:
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           working-directory: .
-          script: bash .github/capture.sh 2>&1 | tee out/capture.log
+          script: bash tools/.github/capture.sh 2>&1 | tee out/capture.log
 
       - name: Publish results
         if: always()
@@ -58,6 +64,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout --orphan capture-output
+          rm -rf tools
           git rm -rfq --cached .
           git add -f out
           git commit -qm "Capture output for ${GITHUB_SHA}"
