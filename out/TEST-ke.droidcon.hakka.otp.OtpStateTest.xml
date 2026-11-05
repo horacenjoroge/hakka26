@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ke.droidcon.hakka.otp.OtpStateTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2026-11-05T08:13:01.842Z" hostname="runnervmnwato" time="0.063">
+  <properties/>
+  <testcase name="resendRestartsTheCountdown" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.016"/>
+  <testcase name="pastingAFullCodeIntoAnyBoxFillsFromTheStart" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.011"/>
+  <testcase name="backspaceOnFilledBoxClearsIt" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.001"/>
+  <testcase name="pastingTextExtractsTheDigits" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.0"/>
+  <testcase name="resendIsDisabledForThirtySecondsThenEnabled" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.001"/>
+  <testcase name="countdownCopyUsesMinutesAndPaddedSeconds" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.014"/>
+  <testcase name="digitLabelsAreOneBased" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.003"/>
+  <testcase name="pastingAPartialCodeFillsFromTheCurrentBox" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.01"/>
+  <testcase name="typingADigitAdvancesFocus" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.001"/>
+  <testcase name="correctCodeSucceeds" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.001"/>
+  <testcase name="backspaceOnEmptyBoxClearsPreviousAndMovesBack" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.0"/>
+  <testcase name="wrongCodeShowsErrorClearsBoxesAndRefocusesFirst" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.001"/>
+  <testcase name="typingAfterAnErrorClearsTheError" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.0"/>
+  <testcase name="submitDoesNothingUntilAllSixDigitsAreFilled" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.001"/>
+  <testcase name="verifierReceivesTheEnteredCode" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.001"/>
+  <testcase name="backspaceOnFirstEmptyBoxDoesNothing" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.0"/>
+  <testcase name="nonDigitsAreRejected" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.0"/>
+  <testcase name="startsEmptyWithFocusOnFirstBox" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.001"/>
+  <testcase name="insertedTextIgnoresTheExistingDigit" classname="ke.droidcon.hakka.otp.OtpStateTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,169 @@
++ OUT=out
++ APK=submissions/horace/app/composeApp/build/outputs/apk/debug/composeApp-debug.apk
++ PKG=ke.droidcon.hakka
++ adb wait-for-device
++ adb shell settings put secure show_ime_with_hard_keyboard 0
++ adb install -r submissions/horace/app/composeApp/build/outputs/apk/debug/composeApp-debug.apk
+Performing Streamed Install
+Success
++ adb shell cmd uimode night no
+Night mode: no
++ adb shell am start -W -n ke.droidcon.hakka/.MainActivity
+Starting: Intent { cmp=ke.droidcon.hakka/.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: ke.droidcon.hakka/.MainActivity
+TotalTime: 2191
+WaitTime: 2214
+Complete
++ sleep 4
++ type_digits 21
++ local digits=21
++ (( i = 0 ))
++ (( i < 2 ))
++ adb shell input text 2
++ sleep 0.7
++ (( i++ ))
++ (( i < 2 ))
++ adb shell input text 1
++ sleep 0.7
++ (( i++ ))
++ (( i < 2 ))
++ sleep 1
++ adb exec-out screencap -p
++ adb shell uiautomator dump /sdcard/ui.xml
+UI hierchary dumped to: /sdcard/ui.xml
++ adb pull /sdcard/ui.xml out/ui-partial.xml
+/sdcard/ui.xml: 1 file pulled, 0 skipped. 12.7 MB/s (16366 bytes in 0.001s)
++ adb shell cmd uimode night yes
+Night mode: yes
++ sleep 3
++ adb exec-out screencap -p
++ adb shell cmd uimode night no
+Night mode: no
++ sleep 3
++ adb shell am force-stop ke.droidcon.hakka
++ REC=3702
++ sleep 1
++ adb shell screenrecord --bit-rate 2000000 --time-limit 60 /sdcard/demo.mp4
++ adb shell am start -W -n ke.droidcon.hakka/.MainActivity
+Starting: Intent { cmp=ke.droidcon.hakka/.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: ke.droidcon.hakka/.MainActivity
+TotalTime: 3520
+WaitTime: 3533
+Complete
++ sleep 3
++ type_digits 654321
++ local digits=654321
++ (( i = 0 ))
++ (( i < 6 ))
++ adb shell input text 6
++ sleep 0.7
++ (( i++ ))
++ (( i < 6 ))
++ adb shell input text 5
++ sleep 0.7
++ (( i++ ))
++ (( i < 6 ))
++ adb shell input text 4
++ sleep 0.7
++ (( i++ ))
++ (( i < 6 ))
++ adb shell input text 3
++ sleep 0.7
++ (( i++ ))
++ (( i < 6 ))
++ adb shell input text 2
++ sleep 0.7
++ (( i++ ))
++ (( i < 6 ))
++ adb shell input text 1
++ sleep 0.7
++ (( i++ ))
++ (( i < 6 ))
++ sleep 1
++ tap_text Submit
++ adb shell uiautomator dump /sdcard/ui.xml
++ adb pull /sdcard/ui.xml out/ui.xml
+/sdcard/ui.xml: 1 file pulled, 0 skipped. 7.4 MB/s (15092 bytes in 0.002s)
++ local bounds
+++ grep -o 'text="Submit"[^>]*bounds="[^"]*"' out/ui.xml
+++ head -1
+++ grep -o 'bounds="[^"]*"'
+++ grep -o '[0-9]\+'
++ bounds=$'472\n2100\n609\n2153'
++ '[' -z $'472\n2100\n609\n2153' ']'
++ read -r x1 y1 x2 y2
+++ echo 472 2100 609 2153
++ adb shell input tap 540 2126
++ sleep 2
++ adb exec-out screencap -p
++ type_digits 123456
++ local digits=123456
++ (( i = 0 ))
++ (( i < 6 ))
++ adb shell input text 1
++ sleep 0.7
++ (( i++ ))
++ (( i < 6 ))
++ adb shell input text 2
++ sleep 0.7
++ (( i++ ))
++ (( i < 6 ))
++ adb shell input text 3
++ sleep 0.7
++ (( i++ ))
++ (( i < 6 ))
++ adb shell input text 4
++ sleep 0.7
++ (( i++ ))
++ (( i < 6 ))
++ adb shell input text 5
++ sleep 0.7
++ (( i++ ))
++ (( i < 6 ))
++ adb shell input text 6
++ sleep 0.7
++ (( i++ ))
++ (( i < 6 ))
++ sleep 1
++ tap_text Submit
++ adb shell uiautomator dump /sdcard/ui.xml
++ adb pull /sdcard/ui.xml out/ui.xml
+/sdcard/ui.xml: 1 file pulled, 0 skipped. 11.6 MB/s (15092 bytes in 0.001s)
++ local bounds
+++ head -1
+++ grep -o 'bounds="[^"]*"'
+++ grep -o 'text="Submit"[^>]*bounds="[^"]*"' out/ui.xml
+++ grep -o '[0-9]\+'
++ bounds=$'472\n2100\n609\n2153'
++ '[' -z $'472\n2100\n609\n2153' ']'
++ read -r x1 y1 x2 y2
+++ echo 472 2100 609 2153
++ adb shell input tap 540 2126
++ sleep 2
++ adb exec-out screencap -p
++ sleep 25
++ adb exec-out screencap -p
++ sleep 2
++ adb shell pkill -INT screenrecord
++ wait 3702
++ sleep 2
++ adb pull /sdcard/demo.mp4 out/demo.mp4
+/sdcard/demo.mp4: 1 file pulled, 0 skipped. 116.1 MB/s (751124 bytes in 0.006s)
++ ls -la out
+total 1336
+drwxr-xr-x  2 runner runner   4096 Nov  5 08:16 .
+drwxr-xr-x 14 runner runner   4096 Nov  5 08:10 ..
+-rw-r--r--  1 runner runner  86104 Nov  5 08:16 after-countdown.png
+-rw-r--r--  1 runner runner  86288 Nov  5 08:15 after-right.png
+-rw-r--r--  1 runner runner  92310 Nov  5 08:15 after-wrong.png
+-rw-r--r--  1 runner runner   9281 Nov  5 08:13 build.log
+-rw-r--r--  1 runner runner   3719 Nov  5 08:16 capture.log
+-rw-r--r--  1 runner runner 751124 Nov  5 08:16 demo.mp4
+-rw-r--r--  1 runner runner 140117 Nov  5 08:15 screenshot-dark.png
+-rw-r--r--  1 runner runner 135914 Nov  5 08:14 screenshot.png
+-rw-r--r--  1 runner runner  16366 Nov  5 08:14 ui-partial.xml
+-rw-r--r--  1 runner runner  15092 Nov  5 08:15 ui.xml

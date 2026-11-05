@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ke.droidcon.hakka.theme.OtpColorsTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-11-05T08:13:01.907Z" hostname="runnervmnwato" time="0.027">
+  <properties/>
+  <testcase name="forThemePicksTheMatchingPalette" classname="ke.droidcon.hakka.theme.OtpColorsTest" time="0.016"/>
+  <testcase name="parsesHexWithAndWithoutAlpha" classname="ke.droidcon.hakka.theme.OtpColorsTest" time="0.0"/>
+  <testcase name="rejectsMissingKeys" classname="ke.droidcon.hakka.theme.OtpColorsTest" time="0.009"/>
+  <testcase name="parsesLightAndDarkPalettes" classname="ke.droidcon.hakka.theme.OtpColorsTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

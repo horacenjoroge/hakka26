@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ke.droidcon.hakka.AppInfoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-11-05T08:13:01.819Z" hostname="runnervmnwato" time="0.016">
+  <properties/>
+  <testcase name="appNameIsHakkahakka26" classname="ke.droidcon.hakka.AppInfoTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
